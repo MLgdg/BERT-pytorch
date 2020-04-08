@@ -85,7 +85,8 @@ class BERTDataset(Dataset):
 
             else:
                 tokens[i] = self.vocab.stoi.get(token, self.vocab.unk_index)
-                output_label.append(0)
+                #output_label.append(0)
+                output_label.append(self.vocab.stoi.get(token, self.vocab.unk_index))
 
         return tokens, output_label
 
